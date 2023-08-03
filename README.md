@@ -26,12 +26,26 @@
 
 ### Danh sách các màn hình <a name="screen"></a>
 <p float="left">
-  <img src="./images/Sapxep.PNG" />
+  <img src="./FootballImage/Login.PNG" />
+  <img src="./FootballImage/Home.PNG" />
+  <img src="./FootballImage/Datsan.PNG" />
+  <img src="./FootballImage/Dat.PNG" />
+  <img src="./FootballImage/Checkin.PNG" />
+  <img src="./FootballImage/Thanhtoan.PNG" />
+  <img src="./FootballImage/Sanbong.PNG" />
+  <img src="./FootballImage/Themsan.PNG" />
+  <img src="./FootballImage/Hanghoa.PNG" />
+  <img src="./FootballImage/Themhanghoa.PNG" />
+  <img src="./FootballImage/Nhaphang.PNG" />
+  <img src="./FootballImage/Bill.PNG" />
+  <img src="./FootballImage/Nhanvien.PNG" />
+  <img src="./FootballImage/Themnhanvien.PNG" />
 </p>
-[Lên đầu trang](#top)
 
+[Lên đầu trang](#top)
 ### Cài đặt phần mềm <a name="setting"></a>
 - Cài đặt MaterialDesign
 - Thay đổi tên máy chủ SQL trong App.config
-- Cài đặt database [Click vào đây để tải database]()
+- Cài đặt database [Click vào đây để tải database](https://github.com/pthanhphong1502/Quanlysanbong/blob/main/QlyBongDa.sql)
+
 [Lên đầu trang](#top)
