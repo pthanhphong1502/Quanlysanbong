@@ -1,0 +1,214 @@
+﻿<Window x:Class="QlySanBong.View.settimeframe"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+        xmlns:vd ="clr-namespace:QlySanBong.Validation"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:QlySanBong.View"
+        mc:Ignorable="d"
+        DataContext="{StaticResource TimeFrameVM}"
+        Title="Thiết lập khung giờ và giá sân" 
+        Height="740"
+        Width="510"
+        WindowStartupLocation="CenterScreen" 
+        x:Name="wdSetTimeFrame"
+        ResizeMode="CanMinimize">
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadedCommand}"
+                                   CommandParameter="{Binding ElementName=wdSetTimeFrame}"/>
+        </i:EventTrigger>
+        <i:EventTrigger EventName="Closing">
+            <ei:CallMethodAction TargetObject="{Binding}" MethodName="CloseWindow"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <Grid
+        Width="500">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="140"/>
+            <RowDefinition/>
+            <RowDefinition Height="90"/>
+        </Grid.RowDefinitions>
+        <TextBlock 
+            HorizontalAlignment="Left" 
+            Margin="30,30,0,0"
+            TextWrapping="Wrap" 
+            Text="Thiết lập khung giờ" 
+            VerticalAlignment="Top" 
+            FontSize="18"
+            FontWeight="Bold"
+            Foreground="Green"/>
+        <StackPanel
+            Orientation="Horizontal" 
+            VerticalAlignment="Top" 
+            Margin="0,20,35,0" 
+            HorizontalAlignment="Right" >
+            <materialDesign:TimePicker
+                Is24Hours="True"
+                x:Name="tpkOpenTime"
+                Width="110" 
+                materialDesign:HintAssist.Hint="Giờ mở cửa"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Bottom"
+                Margin="0" 
+                FontSize="14" 
+                Height="40" 
+                FontWeight="Medium"
+                VerticalContentAlignment="Bottom" 
+                HorizontalContentAlignment="Center" 
+                TabIndex="1"
+                Style="{StaticResource MaterialDesignFloatingHintTimePicker}">
+            </materialDesign:TimePicker>
+                <materialDesign:TimePicker
+                Is24Hours="True"
+                x:Name="tpkCloseTime"
+                Width="110" 
+                materialDesign:HintAssist.Hint="Giờ đóng cửa"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Bottom"
+                Margin="20,0,0,0" 
+                FontSize="14" 
+                Height="40" 
+                FontWeight="Medium"
+                VerticalContentAlignment="Bottom" 
+                HorizontalContentAlignment="Center" 
+                TabIndex="2"
+                Style="{StaticResource MaterialDesignFloatingHintTimePicker}"/>
+        </StackPanel>
+        <ComboBox
+            x:Name="cboTimePerMatch"
+            materialDesign:ComboBoxAssist.ClassicMode="true"
+            FontSize="14"
+            FontWeight="Medium" 
+            materialDesign:HintAssist.Hint="1 tiếng/trận"
+            Width="140" 
+            Height="40" 
+            HorizontalContentAlignment="Left"
+            VerticalContentAlignment="Center" 
+            Padding="3,0,0,0" 
+            Margin="30,80,0,0" 
+            VerticalAlignment="Top"
+            HorizontalAlignment="Left"             
+            TabIndex="3"
+            Style="{StaticResource MaterialDesignFloatingHintComboBox}">
+            <ComboBoxItem Content="1 tiếng/trận"/>
+            <ComboBox.Text>
+                <Binding Path="TimePerMatch" UpdateSourceTrigger="PropertyChanged" Mode="OneWayToSource">
+                </Binding>
+            </ComboBox.Text>
+        </ComboBox>
+        <Button
+            x:Name="btnSet"
+            IsDefault="True"
+            Height="28" 
+            Width="100"
+            Command="{Binding SetCommand}"
+            CommandParameter="{Binding ElementName=wdSetTimeFrame}"
+            HorizontalAlignment="Right"
+            FocusVisualStyle="{x:Null}"
+            Content="Thiết lập" 
+            FontSize="14" 
+            VerticalAlignment="Top"
+            Padding="0" 
+            Foreground="White"
+            Margin="0,90,35,0"/>
+        <Rectangle 
+            Grid.Row="1"
+            Height="3" 
+            Margin="20,5,20,0"
+            VerticalAlignment="Top"
+            Fill="#FF8BC34A"/>
+        <TextBlock 
+            HorizontalAlignment="Left" 
+            Margin="30,30,0,0"
+            TextWrapping="Wrap" 
+            Text="Thiết lập giá" 
+            VerticalAlignment="Top" 
+            FontSize="18"
+            FontWeight="Bold" 
+            Foreground="Green"
+            Grid.Row="1"/>
+        <ComboBox
+            x:Name="cboFieldType"
+            materialDesign:ComboBoxAssist.ClassicMode="true"
+            FontSize="14"
+            FontWeight="Medium" 
+            materialDesign:HintAssist.Hint="Chọn loại sân"
+            Width="140" 
+            Height="40" 
+            HorizontalAlignment="Right" 
+            HorizontalContentAlignment="Left"
+            VerticalContentAlignment="Center" 
+            Padding="3,0,0,0" 
+            Margin="0,15,35,0" 
+            VerticalAlignment="Top"
+            Grid.Row="1"
+            Style="{StaticResource MaterialDesignFloatingHintComboBox}"
+            ItemsSource="{Binding ItemSourceFieldType}">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="SelectionChanged">
+                    <i:InvokeCommandAction Command="{Binding SelectionChangedFieldType}" 
+                            CommandParameter="{Binding ElementName=wdSetTimeFrame}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </ComboBox>
+        <ScrollViewer
+            Margin="30,75,38,10" 
+            Grid.Row="1" >
+            <Grid
+                Grid.Row="1"
+                HorizontalAlignment="Left">
+                <StackPanel
+                    x:Name="stkTime" 
+                    Margin="0,0,0,10"/>
+            </Grid>
+        </ScrollViewer>
+        <Border 
+            BorderThickness="2"
+            Height="400" 
+            Margin="30,70,0,0"
+            Grid.Row="1" 
+            VerticalAlignment="Top"
+            Width="435" 
+            CornerRadius="6" 
+            HorizontalAlignment="Left"/>
+        <StackPanel
+            Orientation="Horizontal"
+            Grid.Row="2" 
+            VerticalAlignment="Bottom"
+            HorizontalAlignment="Center" 
+            Margin="0,0,0,12">
+            <Button
+                x:Name="btnSave"
+                IsDefault="True"
+                Height="26" 
+                Width="120"
+                HorizontalAlignment="Left"
+                FocusVisualStyle="{x:Null}"
+                Content="Lưu" 
+                FontSize="14" 
+                Foreground="White"
+                VerticalAlignment="Bottom"
+                 Command="{Binding SaveCommand}"
+                CommandParameter="{Binding ElementName=wdSetTimeFrame}"/>
+            <Button
+                x:Name="btnExit"
+                Command="{Binding ExitCommand}"
+                CommandParameter="{Binding ElementName=wdSetTimeFrame}"
+                Style="{StaticResource MaterialDesignRaisedButton}"
+                Height="26" 
+                Width="70"
+                FocusVisualStyle="{x:Null}"
+                Content="Bỏ qua" 
+                FontSize="14" 
+                VerticalAlignment="Bottom"
+                Padding="0" 
+                Foreground="White"
+                Margin="10,0,0,0" 
+                HorizontalAlignment="Right" Background="#FFFF6961" BorderBrush="#FFFF6961" />
+        </StackPanel>
+    </Grid>
+</Window>

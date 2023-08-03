@@ -1,0 +1,42 @@
+﻿<Window x:Class="QlySanBong.View.paywindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QlySanBong.View"
+        mc:Ignorable="d"
+        Title="Thanh toán" Height="170" 
+        x:Name="wdpay"
+        DataContext="{StaticResource BusinessVM}"
+        Width="330">
+    <Grid>
+        <TextBlock
+            Text="Bạn muốn thanh toán?"
+            HorizontalAlignment="Center"
+            Margin="0,0,0,50"
+            FontSize="20"
+            Height="30"
+            FontWeight="SemiBold"
+            Foreground="#4a811a"></TextBlock>
+        <Button
+            x:Name="ok"
+            Content="Ok"
+            HorizontalAlignment="Left"
+            Width="100"
+            Command="{Binding okCommand}"
+            CommandParameter="{Binding ElementName=wdpay}"
+            Margin="40,50,0,0">
+        </Button>
+        <Button
+            x:Name="cancel"
+            Content="Cancel"
+            HorizontalAlignment="Left"
+            Width="100"
+            Command="{Binding cancelCommand}"
+            CommandParameter="{Binding ElementName=wdpay}"
+            Margin="178,79,0,29"/>
+        <TextBlock 
+            x:Name="txbIsPaid"
+            Visibility="Hidden"/>
+    </Grid>
+</Window>

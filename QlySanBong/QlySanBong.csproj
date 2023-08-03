@@ -1,0 +1,480 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\NUnit.3.13.2\build\NUnit.props" Condition="Exists('..\packages\NUnit.3.13.2\build\NUnit.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7DB189B3-CB62-43AF-94C2-076305CDC6FE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>QlySanBong</RootNamespace>
+    <AssemblyName>QlySanBong</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FontAwesome.Sharp, Version=5.15.4.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.5.15.4\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignColors, Version=2.0.4.3, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignColors.2.0.4\lib\net452\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=4.3.0.3, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.4.3.0\lib\net452\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=3.13.2.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.13.2\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.4.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=1.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.3.1\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Memory, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.2\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.AccessControl, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.6.0.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Permissions, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Permissions.6.0.0\lib\net461\System.Security.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="ToastNotifications, Version=2.5.1.0, Culture=neutral, PublicKeyToken=e89d9d7314a7c797, processorArchitecture=MSIL">
+      <HintPath>..\packages\ToastNotifications.2.5.1\lib\net40\ToastNotifications.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="data provier\AccountDP.cs" />
+    <Compile Include="data provier\BillDP.cs" />
+    <Compile Include="data provier\DataProvier.cs" />
+    <Compile Include="data provier\EmployDP.cs" />
+    <Compile Include="data provier\FieldInfo.cs" />
+    <Compile Include="data provier\FootballFieldDP.cs" />
+    <Compile Include="data provier\GoodsDP.cs" />
+    <Compile Include="data provier\SalaryDP.cs" />
+    <Compile Include="data provier\SalaryRecordDP.cs" />
+    <Compile Include="data provier\SalarySettingDP.cs" />
+    <Compile Include="data provier\SQLConnection.cs" />
+    <Compile Include="data provier\StockReceiptDP.cs" />
+    <Compile Include="data provier\StockReceiptInfoDP.cs" />
+    <Compile Include="data provier\TimeFrameDP.cs" />
+    <Compile Include="Model\Account.cs" />
+    <Compile Include="Model\Attendance.cs" />
+    <Compile Include="Model\Bill.cs" />
+    <Compile Include="Model\BillInfo.cs" />
+    <Compile Include="Model\Employee.cs" />
+    <Compile Include="Model\FieldInfo.cs" />
+    <Compile Include="Model\FootballField.cs" />
+    <Compile Include="Model\Goods.cs" />
+    <Compile Include="Model\Report.cs" />
+    <Compile Include="Model\Salary.cs" />
+    <Compile Include="Model\SalaryRecord.cs" />
+    <Compile Include="Model\SalarySetting.cs" />
+    <Compile Include="Model\StockReceipt.cs" />
+    <Compile Include="Model\StockReceiptInfo.cs" />
+    <Compile Include="Model\TimeFrame.cs" />
+    <Compile Include="ResourceXAML\controlbarControl.xaml.cs">
+      <DependentUpon>controlbarControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ResourceXAML\ControlGoods.xaml.cs">
+      <DependentUpon>ControlGoods.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ResourceXAML\Converter.cs" />
+    <Compile Include="ResourceXAML\CurrentAccount.cs" />
+    <Compile Include="ResourceXAML\EmployControl.xaml.cs">
+      <DependentUpon>EmployControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ResourceXAML\FieldBookingControl.xaml.cs">
+      <DependentUpon>FieldBookingControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ResourceXAML\FieldButtonControl.xaml.cs">
+      <DependentUpon>FieldButtonControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ResourceXAML\FieldControl.xaml.cs">
+      <DependentUpon>FieldControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ResourceXAML\FieldDetailsControl.xaml.cs">
+      <DependentUpon>FieldDetailsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ResourceXAML\FieldTitleControl.xaml.cs">
+      <DependentUpon>FieldTitleControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ResourceXAML\Historyimportcontrol.xaml.cs">
+      <DependentUpon>Historyimportcontrol.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ResourceXAML\PeriodControl.xaml.cs">
+      <DependentUpon>PeriodControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="validation\ExistValidation.cs" />
+    <Compile Include="validation\NotNullValidation.cs" />
+    <Compile Include="validation\NumberValidation.cs" />
+    <Compile Include="validation\PickersValidation.cs" />
+    <Compile Include="ViewModel\BaseViewModel.cs" />
+    <Compile Include="ViewModel\BusinessViewModel.cs" />
+    <Compile Include="ViewModel\ControlBarViewModel.cs" />
+    <Compile Include="ViewModel\EmployViewModel.cs" />
+    <Compile Include="ViewModel\FootballFieldViewModel.cs" />
+    <Compile Include="ViewModel\GoodsViewModel.cs" />
+    <Compile Include="ViewModel\HomeViewModel.cs" />
+    <Compile Include="ViewModel\LoginViewModel.cs" />
+    <Compile Include="ViewModel\RegisterModel.cs" />
+    <Compile Include="ViewModel\ReportViewModel.cs" />
+    <Compile Include="ViewModel\TimeFrameViewModel.cs" />
+    <Compile Include="View\addemployee.xaml.cs">
+      <DependentUpon>addemployee.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\addfootballfield.xaml.cs">
+      <DependentUpon>addfootballfield.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\addgoods.xaml.cs">
+      <DependentUpon>addgoods.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\addtimeframe.xaml.cs">
+      <DependentUpon>addtimeframe.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\bookingpitch.xaml.cs">
+      <DependentUpon>bookingpitch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\checkInbook.xaml.cs">
+      <DependentUpon>checkInbook.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\checkinEmloy.xaml.cs">
+      <DependentUpon>checkinEmloy.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\forgotPass.xaml.cs">
+      <DependentUpon>forgotPass.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\historyImport.xaml.cs">
+      <DependentUpon>historyImport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\importgoods.xaml.cs">
+      <DependentUpon>importgoods.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\loginWindow.xaml.cs">
+      <DependentUpon>loginWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\paywindow.xaml.cs">
+      <DependentUpon>paywindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ReceiptImport.xaml.cs">
+      <DependentUpon>ReceiptImport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\register.xaml.cs">
+      <DependentUpon>register.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\reportfield.xaml.cs">
+      <DependentUpon>reportfield.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\setsalary.xaml.cs">
+      <DependentUpon>setsalary.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\settimeframe.xaml.cs">
+      <DependentUpon>settimeframe.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ViewStockInfo.xaml.cs">
+      <DependentUpon>ViewStockInfo.xaml</DependentUpon>
+    </Compile>
+    <Page Include="ResourceXAML\controlbarControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ResourceXAML\ControlGoods.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ResourceXAML\EmployControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ResourceXAML\FieldBookingControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ResourceXAML\FieldButtonControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ResourceXAML\FieldControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ResourceXAML\FieldDetailsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ResourceXAML\FieldTitleControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ResourceXAML\Historyimportcontrol.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ResourceXAML\PeriodControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\addemployee.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\addfootballfield.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\addgoods.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\addtimeframe.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\bookingpitch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\checkInbook.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\checkinEmloy.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\forgotPass.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\historyImport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\HomeWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="View\HomeWindow.xaml.cs">
+      <DependentUpon>HomeWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="ResourceXAML\MainResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\importgoods.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\loginWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\paywindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ReceiptImport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\register.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\reportfield.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\setsalary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\settimeframe.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ViewStockInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\ball.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\logochampion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Stad.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\logoball.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\imageaccount.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\iconpitch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\calendar.png" />
+    <Resource Include="Image\cash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\size.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\ball1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\penguin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\41290.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\avatarsboss.jpeg" />
+    <Resource Include="Image\employee.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\ghim.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\NUnit.3.13.2\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.3.13.2\build\NUnit.props'))" />
+    <Error Condition="!Exists('..\packages\MaterialDesignThemes.4.3.0\build\MaterialDesignThemes.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MaterialDesignThemes.4.3.0\build\MaterialDesignThemes.targets'))" />
+  </Target>
+  <Import Project="..\packages\MaterialDesignThemes.4.3.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.3.0\build\MaterialDesignThemes.targets')" />
+</Project>

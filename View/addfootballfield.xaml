@@ -1,0 +1,220 @@
+﻿<Window x:Class="QlySanBong.View.addfootballfield"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:vd ="clr-namespace:QlySanBong.Validation"
+        xmlns:ei ="http://schemas.microsoft.com/expression/2010/interactions"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:QlySanBong.View"
+        mc:Ignorable="d"
+        DataContext="{StaticResource FieldVM}"
+        x:Name="wdAddFootballField"
+        Title="Thêm sân bóng" 
+        Height="340"
+        Width="400" 
+        Background="#FFFF" 
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid
+            HorizontalAlignment="Center"
+            Margin="0,20,0,0"
+            VerticalAlignment="Top"
+            Width="320">
+            <Grid
+                Margin="0"
+                VerticalAlignment="Top"
+                Width="320"
+                Height="40">
+                <Label
+                    Content="Mã sân"
+                    HorizontalAlignment="Left"
+                    FontSize="18"
+                    FontWeight="SemiBold"
+                    Height="32"
+                    VerticalAlignment="Center"/>
+                <Rectangle
+                    Width="190"
+                    Height="40"
+                    RadiusY="6"
+                    RadiusX="6" 
+                    Stroke="#FF797272"
+                    HorizontalAlignment="Right"/>
+                <TextBox
+                    x:Name="txtIdField"
+                    materialDesign:HintAssist.Hint="Mã tự động"
+                    HorizontalAlignment="Right"
+                    Width="180"
+                    Height="40"
+                    FontSize="14"
+                    BorderThickness="0"
+                    MaxLines="1"
+                    IsReadOnly="True"
+                    Margin="0,0,5,0"
+                    HorizontalContentAlignment="Left"
+                    VerticalContentAlignment="Center"
+                    VerticalAlignment="Center"
+                    FontWeight="SemiBold"/>
+            </Grid>
+            <Grid
+                Margin="0,60,0,0"
+                VerticalAlignment="Top"
+                Width="320"
+                Height="40">
+                <Label
+                    Content="Tên sân"
+                    HorizontalAlignment="Left"
+                    FontSize="18"
+                    FontWeight="SemiBold"
+                    Height="32"
+                    VerticalAlignment="Center"/>
+                <Rectangle
+                    Width="190"
+                    Height="40"
+                    RadiusY="6"
+                    RadiusX="6" 
+                    Stroke="#FF797272"
+                    HorizontalAlignment="Right"/>
+                <TextBox
+                    x:Name="txtName"
+                    materialDesign:HintAssist.Hint="Tên sân"
+                    HorizontalAlignment="Right"
+                    Width="180"
+                    Height="40"
+                    FontSize="14"
+                    BorderThickness="0"
+                    MaxLines="1"
+                    Margin="0,0,5,0"
+                    HorizontalContentAlignment="Left"
+                    VerticalContentAlignment="Center"
+                    VerticalAlignment="Center"
+                    FontWeight="SemiBold">
+                    <TextBox.Text>
+                        <Binding Path="FieldName" UpdateSourceTrigger="PropertyChanged" Mode="OneWayToSource" >
+                            <Binding.ValidationRules>
+                                <vd:ExistValidation  ErrorMessageNull="Vui lòng nhập tên sân!"/>
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </TextBox.Text>
+                </TextBox>
+            </Grid>
+            <Grid
+                Margin="0,120,0,0"
+                VerticalAlignment="Top"
+                Width="320"
+                Height="40">
+                <Label
+                    Content="Loại sân"
+                    HorizontalAlignment="Left"
+                    FontSize="18"
+                    FontWeight="SemiBold"
+                    Height="32"
+                    VerticalAlignment="Center"/>
+                <Rectangle
+                    Width="190"
+                    Height="40"
+                    RadiusY="6"
+                    RadiusX="6" 
+                    Stroke="#FF797272"
+                    HorizontalAlignment="Right"/>
+                <ComboBox
+                    x:Name="cboFieldType"
+                    IsEditable="True"
+                    materialDesign:ComboBoxAssist.ClassicMode="true"
+                    materialDesign:HintAssist.Hint="Nhập số để thêm loại sân" 
+                    Height="40" 
+                    ItemsSource="{Binding ItemSourceField}"
+                    FontSize="14" 
+                    Width="180"
+                    BorderThickness="0"
+                    Padding="0" 
+                    Margin="0,0,5,0" 
+                    HorizontalAlignment="Right"
+                    VerticalContentAlignment="Center" 
+                    FontWeight="SemiBold"
+                    HorizontalContentAlignment="Left">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="LostFocus">
+                            <i:InvokeCommandAction Command="{Binding LostFocusCommand}"
+                                                   CommandParameter="{Binding ElementName=wdAddFootballField}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </ComboBox>
+            </Grid>
+            <Grid
+                VerticalAlignment="Top"  
+                Width="320" 
+                Height="40"
+                Margin="0,180,0,0">
+                <Label
+                    Content="Trạng thái"
+                    HorizontalAlignment="Left"
+                    FontSize="18" 
+                    FontWeight="SemiBold" 
+                    Height="32" 
+                    Margin="0" 
+                    VerticalAlignment="Center"/>
+                <Rectangle
+                    Width="190"
+                    Height="40"
+                    RadiusY="6"
+                    RadiusX="6" 
+                    Stroke="#FF797272"
+                    HorizontalAlignment="Right"/>
+                <ComboBox
+                    x:Name="cboStatus"
+                    materialDesign:ComboBoxAssist.ClassicMode="true"
+                    Height="40" 
+                    FontSize="14" 
+                    Width="180"
+                    BorderThickness="0"
+                    Padding="0" 
+                    Margin="0,0,5,0" 
+                    HorizontalAlignment="Right"
+                    VerticalContentAlignment="Center" 
+                    HorizontalContentAlignment="Left"
+                    FontWeight="SemiBold">
+                    <ComboBoxItem IsSelected="True" Content="Tốt"/>
+                    <ComboBoxItem  Content="Hỏng"/>
+                </ComboBox>
+            </Grid>
+        </Grid>
+        <Grid 
+            Margin="0,0,40,15" 
+            VerticalAlignment="Bottom" 
+            Width="190" 
+            HorizontalAlignment="Right">
+            <Button
+                x:Name="btnSave"
+                Content="Lưu"
+                Height="30" 
+                Width="90"
+                ToolTip="Thêm nhân viên" 
+                Margin="0"
+                Padding="0"
+                HorizontalAlignment="Left"
+                FocusVisualStyle="{x:Null}"
+                FontSize="16"
+                Command="{Binding SaveCommand}"
+                CommandParameter="{Binding ElementName=wdAddFootballField}"
+                Foreground="White"/>
+            <Button
+                x:Name="btnCancel"
+                Height="30"
+                Content="Bỏ qua"
+                Width="90"
+                ToolTip="Thoát"    
+                Margin="0"
+                Padding="0"
+                HorizontalAlignment="Right"
+                FocusVisualStyle="{x:Null}" 
+                FontSize="16"
+                Foreground="White"
+                Command="{Binding ExitCommand}"
+                CommandParameter="{Binding ElementName=wdAddFootballField}"
+                BorderBrush="#FFFF4B4B"
+                Background="#FFFF4B4B"/>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,14 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:viewmodel="clr-namespace:QlySanBong.ViewModel"
+                    xmlns:models ="clr-namespace:QlySanBong.Model"
+                    xmlns:local="clr-namespace:QlySanBong.ResourceXAML">
+    <viewmodel:LoginViewModel x:Key="loginVM"></viewmodel:LoginViewModel>
+    <viewmodel:FootballFieldViewModel x:Key="FieldVM"></viewmodel:FootballFieldViewModel>
+    <viewmodel:RegisterModel x:Key="registerVM"></viewmodel:RegisterModel>
+    <viewmodel:TimeFrameViewModel x:Key="TimeFrameVM"></viewmodel:TimeFrameViewModel>
+    <viewmodel:BusinessViewModel x:Key="BusinessVM"></viewmodel:BusinessViewModel>
+    <viewmodel:LoginViewModel x:Key="LoginVM"></viewmodel:LoginViewModel>
+    <viewmodel:HomeViewModel x:Key="HomeVM"></viewmodel:HomeViewModel>
+    <viewmodel:payViewModel x:Key="payVM"></viewmodel:payViewModel>
+</ResourceDictionary>

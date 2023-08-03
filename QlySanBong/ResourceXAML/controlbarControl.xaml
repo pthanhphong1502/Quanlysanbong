@@ -1,0 +1,69 @@
+﻿<UserControl x:Class="QlySanBong.ResourceXAML.controlbarControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:QlySanBong.ResourceXAML"
+             x:Name="ucControlBar"
+             xmlns:i ="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:wpf="http://schemas.microsoft.com/netfx/2007/xaml/presentation" xmlns:wpf1="http://schemas.microsoft.com/netfx/2009/xaml/presentation" xmlns:metro="http://schemas.microsoft.com/xps/2005/06"
+             mc:Ignorable="d" >
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="MouseLeftButtonDown">
+            <i:InvokeCommandAction Command="{Binding SelectedChangedCommand}"
+                                   CommandParameter="{Binding ElementName=ucControlBar}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <Grid>
+        <materialDesign:ColorZone CornerRadius="10,10,0,0" 
+            Mode="PrimaryLight"
+            Padding="1" Height="30">
+            <DockPanel>
+                <StackPanel DockPanel.Dock="Right" Orientation="Horizontal" >
+                    <StackPanel.Resources>
+             
+                        <Style TargetType="Button">
+                            <Setter Property="Margin" Value="2 2 2 2"></Setter>
+                            <Setter Property="Width" Value="5"></Setter>
+                            <Setter Property="Height" Value="5"/>
+                           
+                        </Style>
+                    </StackPanel.Resources>
+                    <Button
+                           ToolTip="Thu nhỏ"
+                           Style="{StaticResource MaterialDesignRaisedLightButton}"
+                           Command="{Binding MinimizeWindowCommand}"
+                           CommandParameter="{Binding ElementName=ucControlBar}"
+                           ToolBar.OverflowMode="AsNeeded" Foreground="#FF020202" BorderBrush="Transparent" Background="Transparent" >
+                        <materialDesign:PackIcon Kind="WindowMinimize"/>
+                    </Button>
+
+                    <Button
+                            ToolTip="Phóng to"
+                            Style="{StaticResource MaterialDesignRaisedLightButton}"
+                            Command="{Binding MaximizeWindowCommand}"
+                        CommandParameter="{Binding ElementName=ucControlBar}"
+                            ToolBar.OverflowMode="AsNeeded" BorderBrush="Transparent" Background="Transparent" >
+                        <materialDesign:PackIcon Kind="WindowMaximize"/>
+                    </Button>
+                    <Button
+                            ToolTip="Đóng"
+                            Command="{Binding CloseWindowCommand}"
+                            CommandParameter="{Binding ElementName=ucControlBar}"
+                            Style="{StaticResource MaterialDesignRaisedLightButton}"
+                            ToolBar.OverflowMode="AsNeeded" BorderBrush="Transparent" Background="Transparent" >
+                        <materialDesign:PackIcon Kind="WindowClose"/>
+                    </Button>
+                </StackPanel>
+                <StackPanel DockPanel.Dock="Left"
+                            Orientation="Horizontal">
+                    <TextBlock
+                        VerticalAlignment="Center"
+                        Margin="16 0 0 0"
+                        Text="{Binding Tag,ElementName=ucControlBar}" />
+                </StackPanel>
+            </DockPanel>
+        </materialDesign:ColorZone>
+    </Grid>
+</UserControl>

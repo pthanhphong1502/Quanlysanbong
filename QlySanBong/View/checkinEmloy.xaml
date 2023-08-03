@@ -1,0 +1,136 @@
+﻿<Window x:Class="QlySanBong.View.checkinEmloy"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QlySanBong.View"
+        mc:Ignorable="d"
+        Title="Điểm danh" Height="450" Width="550" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="310"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <materialDesign:PackIcon Kind="BadgeAccountOutline"  Height="35" Width="35"
+                  HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="SlateGray" 
+                  Margin="10,10,0,0"/>
+                <ComboBox
+                      Cursor="Hand"
+                      materialDesign:HintAssist.Hint="Tên nhân viên"
+                      Margin="50,10,0,0"
+                      materialDesign:HintAssist.HintOpacity=".40"
+                      Height="35" Width="140"
+                      FontSize="20"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Top"
+                      IsEditable="False">
+                </ComboBox>
+            </Grid>
+            <Grid Grid.Row="1">
+                <StackPanel 
+            Orientation="Horizontal"
+            HorizontalAlignment="Center" 
+            Height="35" 
+            VerticalAlignment="Top"
+            Width="541" Margin="5,0,0,0" 
+            Background="Transparent">
+                    <Grid Width="76" >
+                        <Rectangle Fill="#FF85B8EC" Stroke="White" RadiusX="4" RadiusY="4"/>
+                        <TextBlock 
+                            TextWrapping="Wrap" 
+                            Text="Thứ 2"
+                            Foreground="White"
+                            FontSize="16" 
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center" 
+                            FontWeight="Medium"  />
+                    </Grid>
+                    <Grid Width="76">
+                        <Rectangle Fill="#FF85B8EC" Stroke="White" RadiusX="4" RadiusY="4"/>
+                        <TextBlock 
+                    TextWrapping="Wrap" 
+                    Text="Thứ 3"
+                    Foreground="White"
+                    FontSize="16" 
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center" 
+                    FontWeight="Medium" />
+                    </Grid>
+                    <Grid Width="76">
+                        <Rectangle Fill="#FF85B8EC" Stroke="White" RadiusX="4" RadiusY="4"/>
+                        <TextBlock 
+                    TextWrapping="Wrap" 
+                    Text="Thứ 4"
+                            Foreground="White"
+                    FontSize="16" 
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center" 
+                    FontWeight="Medium" />
+                    </Grid>
+                    <Grid Width="76">
+                        <Rectangle Fill="#FF85B8EC" Stroke="White" RadiusX="4" RadiusY="4"/>
+                        <TextBlock 
+                    TextWrapping="Wrap" 
+                    Text="Thứ 5"
+                    FontSize="16" 
+                            Foreground="White"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center" 
+                    FontWeight="Medium" />
+                    </Grid>
+                    <Grid Width="76">
+                        <Rectangle Fill="#FF85B8EC" Stroke="White" RadiusX="4" RadiusY="4"/>
+                        <TextBlock 
+                    TextWrapping="Wrap" 
+                    Text="Thứ 6"
+                            Foreground="White"
+                    FontSize="16" 
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center" 
+                    FontWeight="Medium" />
+                    </Grid>
+                    <Grid Width="76">
+                        <Rectangle Fill="#FF85B8EC" Stroke="White" RadiusX="4" RadiusY="4"/>
+                        <TextBlock 
+                    TextWrapping="Wrap" 
+                    Text="Thứ 7"
+                            Foreground="White"
+                    FontSize="16" 
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center" 
+                    FontWeight="Medium" />
+                    </Grid>
+                    <Grid Width="78" HorizontalAlignment="Right">
+                        <Rectangle Fill="#FF85B8EC" Stroke="White" RadiusX="4" RadiusY="4"/>
+                        <TextBlock 
+                    TextWrapping="Wrap" 
+                    Text="Chủ nhật"
+                    FontSize="16" 
+                            Foreground="White"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center" 
+                    FontWeight="Medium" />
+                    </Grid>
+                </StackPanel>
+                <WrapPanel 
+                    x:Name="wpMonthView"
+                    HorizontalAlignment="Center"
+                    Height="260" 
+                    VerticalAlignment="Top"
+                    Width="534" 
+                    Margin="0,40,0,0" 
+                    Background="WhiteSmoke"/>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Button  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20,0,0,0" Width="120" Background="#FF6CA5DC" BorderBrush="#78A2CC" Content="Điểm danh"
+                         Foreground="White" FontWeight="DemiBold"/>
+                <Button  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="160,0,0,0" Width="120" Background="#FF6961" BorderBrush="#FF6961" Content="Hủy"
+                         Foreground="White" FontWeight="DemiBold"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

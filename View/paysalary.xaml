@@ -1,0 +1,173 @@
+﻿<Window x:Class="QlySanBong.View.paysalary"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QlySanBong.View"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Trả lương" Height="900" Width="700"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="239*"/>
+            <RowDefinition Height="630*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.RowSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="200"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock HorizontalAlignment="Center"
+                       VerticalAlignment="Top"
+                       Height="60"
+                       Width="290" 
+                       Margin="0,5,0,0">
+                <TextBox FontFamily="Munich"
+                         FontWeight="ExtraBold"
+                         FontSize="50"
+                         Foreground="#4a811a"
+                         VerticalContentAlignment="Center"
+                         HorizontalContentAlignment="Center"
+                         Height="65"
+                         Width="290"
+                         Text="Trả lương" BorderThickness="0"/>
+            </TextBlock>
+            <Rectangle Margin="10,90,0,30"
+                       HorizontalAlignment="Left"
+                       Stroke="#4a811a"
+                       Height="60"
+                       Width="150"
+                       RadiusX="10"
+                       RadiusY="10"/>
+            <ComboBox VerticalAlignment="Center"
+                      VerticalContentAlignment="Bottom"
+                      BorderBrush="#4a811a"
+                      HorizontalAlignment="Left"
+                      Margin="20,98,0,48"
+                      materialDesign:HintAssist.Hint="Chọn tháng"
+                      Height="54"
+                      FontSize="16"
+                      Width="130">
+            </ComboBox>
+            <Button HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Margin="200,65,0,0"
+                    Height="55"
+                    Content="Trả"
+                    Background="#FF8BC34A"
+                    Cursor="Hand"
+                    Style="{StaticResource MaterialDesignRaisedSecondaryButton}"
+                    BorderThickness="0"
+                    Foreground="WhiteSmoke"
+                    FontSize="25"
+                    FontWeight="Medium"
+                    Width="150">
+
+            </Button>
+            <Grid Grid.Row="1" Opacity="0.99">
+                <Rectangle Fill="White"
+                           VerticalAlignment="Center"  
+                           HorizontalAlignment="Center">
+                </Rectangle>
+                <TextBlock 
+                            HorizontalAlignment="Left" 
+                            Margin="30,10,0,0"
+                            Text="Lương nhân viên" 
+                            VerticalAlignment="Top" 
+                            FontSize="24"
+                            Foreground="DarkGray"
+                            FontWeight="DemiBold" />
+                <Grid 
+                            HorizontalAlignment="Center"
+                            Width="634" Margin="30,0,28,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="95"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0" 
+                          Margin="0,55,0,0"
+                          Background="#4a811a">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="60"/>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock                  
+                            x:Name="txbOrderNum"
+                            Text="STT"
+                            Grid.Column="0"
+                            HorizontalAlignment="Center" 
+                            Margin="0" 
+                            TextWrapping="Wrap" 
+                            VerticalAlignment="Center" 
+                            FontWeight="SemiBold" 
+                            TextAlignment="Center" 
+                            Foreground="White"    
+                            FontSize="16"/>
+                        <TextBlock 
+                            x:Name="txbName"
+                            Foreground="White"
+                            FontWeight="SemiBold"
+                            Grid.Column="1"
+                            Text="Tên nhân viên"
+                            HorizontalAlignment="Center" 
+                            Margin="10,0,0,0" 
+                            TextWrapping="Wrap" 
+                            TextTrimming="CharacterEllipsis"
+                            MaxWidth="240"
+                            VerticalAlignment="Center" 
+                            FontSize="16"/>
+                        <TextBlock 
+                            x:Name="txbTotalSalary"
+                            Text="Lương"
+                            Grid.Column="2"
+                            Foreground="White"
+                            HorizontalAlignment="Center" 
+                            Margin="0" 
+                            TextWrapping="Wrap" 
+                            VerticalAlignment="Center" 
+                            FontWeight="SemiBold" 
+                            TextAlignment="Center" 
+                            FontSize="16"/>
+                    </Grid>
+                    <ScrollViewer
+                        Grid.Row="1" >
+                        <StackPanel
+                        Grid.Row="1"
+                        x:Name="stkSalaryInfo" 
+                        Margin="0,2,0,0"/>
+                    </ScrollViewer>
+                </Grid>
+                <Border 
+                    BorderThickness="3"
+                    Height="522" 
+                    Margin="30,88,28,0" 
+                    VerticalAlignment="Top"
+                    BorderBrush="#4a811a"
+                    Width="634" 
+                    CornerRadius="5" 
+                    HorizontalAlignment="Center"/>
+                <Border
+                    BorderThickness="2"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Top"
+                    Width="634"
+                    BorderBrush="#4a811a"/>
+                <Button HorizontalAlignment="Center"
+                        VerticalAlignment="Bottom"
+                        Height="35" Width="150"
+                        Margin="0,0,0,12"
+                        FontWeight="Bold"
+                        Background="#FF6961"
+                        BorderThickness="0"
+                        Content="Trở lại"
+                        Foreground="White"
+                        FontSize="20"
+                        HorizontalContentAlignment="Center"
+                        VerticalContentAlignment="Center"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,106 @@
+﻿<Window x:Class="QlySanBong.View.paywindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:local="clr-namespace:QlySanBong.View" xmlns:uc="clr-namespace:QlySanBong.ResourceXAML"
+        mc:Ignorable="d"
+        Title="Thanh toán" 
+        Height="200" 
+        x:Name="wdpay"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        Background="Transparent" 
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen"
+        DataContext="{StaticResource BusinessVM}"
+        Width="430">
+    <i:Interaction.Triggers>
+        <i:EventTrigger
+            EventName="Loaded">
+            <i:InvokeCommandAction
+                Command="{Binding LoadMoneyFieldCommand}"
+                CommandParameter="wdpay">
+            </i:InvokeCommandAction>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <uc:controlbarControl Tag="{Binding Title,ElementName = wdpay}">
+            </uc:controlbarControl>
+        </Grid>
+        <Border Grid.Row="1" Background="White" CornerRadius="0,0,10,10">
+            <Grid Grid.Row="1">
+                <TextBlock
+            Text="Tiền sân:"
+            Height="30"
+            Width="100"
+            VerticalAlignment="Top"
+            Margin="0,20,260,0"
+            FontSize="22"
+            FontWeight="SemiBold"
+            Foreground="#4a811a"></TextBlock>
+                <TextBox
+                    Text="2000"
+                   IsReadOnly="True"
+            x:Name="txbMoneyfield"
+            Height="30"
+            Padding="0,0,0,0"
+            VerticalAlignment="Top"
+            Margin="0,20,90,0"
+            Width="210"
+            FontSize="20"
+            HorizontalContentAlignment="Right"
+            HorizontalAlignment="Right">
+                </TextBox>
+                <TextBlock
+            Height="30"
+            Width="100"
+            Text="đồng"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Right"
+            Margin="0,20,-10,0"
+            FontSize="16"
+            Padding="5,6,0,0"
+            FontWeight="SemiBold"></TextBlock>
+                <TextBlock
+            Text="Bạn muốn thanh toán?"
+            HorizontalAlignment="Center"
+            Margin="0,0,0,0"
+            FontSize="18"
+            Height="30"
+            FontWeight="SemiBold"></TextBlock>
+                <Button
+            x:Name="ok"
+            Content="Ok"
+            Foreground="White"
+            HorizontalAlignment="Left"
+            Width="100"
+            Command="{Binding okCommand}"
+            CommandParameter="{Binding ElementName=wdpay}"
+            Margin="60,90,0,0">
+                </Button>
+                <Button
+            x:Name="cancel"
+            Content="Cancel"
+            Foreground="White"
+            HorizontalAlignment="Right"
+            Width="100"
+            Command="{Binding cancelCommand}"
+            CommandParameter="{Binding ElementName=wdpay}"
+            Margin="0,90,60,0">
+                </Button>
+                <TextBlock 
+            x:Name="txbIsPaid"
+            Visibility="Hidden"/>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
+
+
